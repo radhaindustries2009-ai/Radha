@@ -5,28 +5,72 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Radha Industries</title>
 
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
 <style>
 body {
     font-family: Arial, sans-serif;
     margin: 0;
+    padding-top: 80px
     color: #333;
 }
 
 /* HEADER */
 header {
-    background: #8B0000;
-    padding: 15px 0;
-    position: fixed;
-    width: 100%;
-    top: 0;
+    
+  background: #8B0000;
+  padding: 15px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
 }
 
 nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: #ffd700;
+
+}
+
+nav {
+
+    .nav-links {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: #ffd700;
+}
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
-    margin: auto;
     padding: 0 20px;
 }
 
@@ -34,29 +78,26 @@ nav {
     height: 40px;
 }
 
-.nav-links {
-    display: flex;
-    gap: 20px;
-    list-style: none;
-}
-
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-.nav-links a:hover {
-    color: #ffd700;
-}
-
 /* HERO */
 .hero {
-    margin-top: 80px;
     background: #111;
     color: white;
     text-align: center;
-    padding: 100px 20px;
+    padding: 120px 20px 60px;
+}
+
+.hero h1 {
+    font-size: 36px;
+}
+
+.cta-button {
+    background: white;
+    color: #8B0000;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 20px;
 }
 
 /* PRODUCTS */
@@ -86,32 +127,46 @@ nav {
     text-decoration: none;
     border-radius: 5px;
 }
+
+/* CONTACT */
+.contact {
+    background: #f5f5f5;
+    padding: 50px;
+    text-align: center;
+}
+
+/* FOOTER */
+footer {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
 </style>
 </head>
 
 <body>
-
+    body {
+  margin: 0;
+  padding-top: 80px;
+}
+<!-- HEADER -->
 <header>
 <nav>
-
 <div class="logo">
-<img src="logo.png">
+<img src="logo.png" alt="Radha Logo">
 </div>
-
-<ul class="nav-links">
-<li><a href="#home">Home</a></li>
-<li><a href="#products">Products</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-
+<div>RADHA INDUSTRIES</div>
 </nav>
 </header>
 
-<section id="home" class="hero">
+<!-- HERO --><section id="home" class="hero">
 <h1>Industrial Solutions That Actually Work</h1>
 <p>Precision engineering, water treatment, and industrial products trusted across India.</p>
+<a href="#products" class="cta-button">View Products</a>
 </section>
 
+<!-- PRODUCTS -->
 <section id="products" class="section">
 <h2>Our Products</h2>
 
@@ -129,13 +184,41 @@ nav {
 <a href="effluent-chemical.pdf" target="_blank">View Details</a>
 </div>
 
+<div class="card">
+<h3>Water Testing Kits</h3>
+<p>Accurate industrial water testing.</p>
+<a href="testing-kits.pdf" target="_blank">View Details</a>
+</div>
+
+<div class="card">
+<h3>Mechanical Seals</h3>
+<p>Reliable sealing for heavy machinery.</p>
+<a href="seals.pdf" target="_blank">View Details</a>
+</div>
+
+<div class="card">
+<h3>Water Treatment Systems</h3>
+<p>Complete RO, STP, and filtration solutions.</p>
+<a href="water-treatment.pdf" target="_blank">View Details</a>
+</div>
+
 </div>
 </section>
 
-<section id="contact" class="section">
-<h2>Contact</h2>
-<p>Phone: 8805102045</p>
+<!-- CONTACT -->
+<section class="contact">
+<h2>Contact Us</h2>
+
+<p><strong>Name:</strong> SUILPAGRE</p>
+<p><strong>Phone:</strong> 8805102045</p>
+<p><strong>Email:</strong> info@radhaindustries.com</p>
+
 </section>
+
+<!-- FOOTER -->
+<footer>
+<p>© 2026 Radha Industries</p>
+</footer>
 
 </body>
 </html>
