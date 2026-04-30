@@ -16,15 +16,40 @@ body {
 
 /* HEADER */
 header {
-    background: #8B0000;
-    color: white;
-    padding: 15px;
-    position: fixed;
-    width: 100%;
-    top: 0;
+   <header>
+  <nav style="display:flex; justify-content:space-between; align-items:center; max-width:1200px; margin:auto;">
+    
+    <div style="font-weight:bold; font-size:20px;">
+      RADHA INDUSTRIES
+    </div>
+<ul class="nav-links">
+      <li><a href="#home" style="color:white; text-decoration:none;">Home</a></li>
+      <li><a href="#products" style="color:white; text-decoration:none;">Products</a></li>
+      <li><a href="#clients" style="color:white; text-decoration:none;">Clients</a></li>
+      <li><a href="#contact" style="color:white; text-decoration:none;">Contact</a></li>
+    </ul>
+
+  </nav>
+</header>
 }
 
 nav {
+
+    .nav-links {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: #ffd700;
+}
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -114,8 +139,7 @@ footer {
 </nav>
 </header>
 
-<!-- HERO -->
-<section class="hero">
+<!-- HERO --><section id="home" class="hero">
 <h1>Industrial Solutions That Actually Work</h1>
 <p>Precision engineering, water treatment, and industrial products trusted across India.</p>
 <a href="#products" class="cta-button">View Products</a>
