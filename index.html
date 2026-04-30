@@ -11,26 +11,44 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
+    padding-top: 80px
     color: #333;
 }
 
 /* HEADER */
 header {
-   <header>
-  <nav style="display:flex; justify-content:space-between; align-items:center; max-width:1200px; margin:auto;">
     
-    <div style="font-weight:bold; font-size:20px;">
-      RADHA INDUSTRIES
-    </div>
-<ul class="nav-links">
-      <li><a href="#home" style="color:white; text-decoration:none;">Home</a></li>
-      <li><a href="#products" style="color:white; text-decoration:none;">Products</a></li>
-      <li><a href="#clients" style="color:white; text-decoration:none;">Clients</a></li>
-      <li><a href="#contact" style="color:white; text-decoration:none;">Contact</a></li>
-    </ul>
+  background: #8B0000;
+  padding: 15px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
 
-  </nav>
-</header>
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: #ffd700;
+
 }
 
 nav {
@@ -128,7 +146,10 @@ footer {
 </head>
 
 <body>
-
+    body {
+  margin: 0;
+  padding-top: 80px;
+}
 <!-- HEADER -->
 <header>
 <nav>
