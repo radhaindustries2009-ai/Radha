@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Radha Industries</title>
 
+<!-- WhatsApp Icon -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
 <style>
 body {
     font-family: Arial, sans-serif;
@@ -59,20 +62,6 @@ nav {
     padding: 140px 20px 80px;
 }
 
-.hero h1 {
-    font-size: 36px;
-}
-
-.cta-button {
-    background: white;
-    color: #8B0000;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    display: inline-block;
-    margin-top: 20px;
-}
-
 /* SECTION */
 .section {
     padding: 60px 20px;
@@ -104,11 +93,30 @@ nav {
     border-radius: 5px;
 }
 
+/* CLIENTS */
+.clients-slider {
+  overflow: hidden;
+}
+
+.slide-track {
+  display: flex;
+  animation: scroll 20s linear infinite;
+}
+
+.slide-track img {
+  width: 120px;
+  margin: 20px;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
 /* CONTACT */
 .contact {
     background: #f5f5f5;
     padding: 50px;
-    text-align: center;
 }
 
 /* MAP */
@@ -118,25 +126,22 @@ nav {
     border: 0;
 }
 
-/* WHATSAPP BUTTON */
+/* WHATSAPP */
 .whatsapp-btn {
   position: fixed;
   bottom: 20px;
   right: 20px;
   background: #25D366;
   color: white;
-  font-size: 26px;
-  padding: 15px 18px;
+  font-size: 28px;
   border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  z-index: 9999;
 }
-
-.whatsapp-btn:hover {
-  background: #1ebe5d;
-}
-
 </style>
 </head>
 
@@ -145,7 +150,6 @@ nav {
 <!-- HEADER -->
 <header>
 <nav>
-
 <div class="logo">
 <img src="logo.png">
 </div>
@@ -153,9 +157,9 @@ nav {
 <ul class="nav-links">
 <li><a href="#home">Home</a></li>
 <li><a href="#products">Products</a></li>
+<li><a href="#clients">Clients</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
-
 </nav>
 </header>
 
@@ -163,7 +167,6 @@ nav {
 <section id="home" class="hero">
 <h1>Industrial Solutions That Actually Work</h1>
 <p>Precision engineering, water treatment, and industrial products trusted across India.</p>
-<a href="#products" class="cta-button">View Products</a>
 </section>
 
 <!-- PRODUCTS -->
@@ -205,6 +208,25 @@ nav {
 </div>
 </section>
 
+<!-- CLIENTS -->
+<section id="clients" class="section">
+<h2>Our Clients</h2>
+
+<div class="clients-slider">
+<div class="slide-track">
+
+<img src="client1.png">
+<img src="client2.png">
+<img src="client3.png">
+
+<img src="client1.png">
+<img src="client2.png">
+<img src="client3.png">
+
+</div>
+</div>
+</section>
+
 <!-- CONTACT -->
 <section id="contact" class="contact">
 <h2>Contact Us</h2>
@@ -216,18 +238,14 @@ nav {
 <!-- MAP -->
 <section class="map">
 <h2 style="text-align:center;">Our Location</h2>
-
 <iframe 
-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3753.1620406418833!2d72.72222339999999!3d19.833095499999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be71f1fa059cc4b%3A0xfa7343749557ebe0!2sRADHA%20INDUSTRIES!5e0!3m2!1sen!2sin!4v1777618940678!5m2!1sen!2sin"
-allowfullscreen="" 
-loading="lazy">
+src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3753.1620406418833!2d72.72222339999999!3d19.833095499999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be71f1fa059cc4b%3A0xfa7343749557ebe0!2sRADHA%20INDUSTRIES!5e0!3m2!1sen!2sin!4v1777618940678!5m2!1sen!2sin">
 </iframe>
-
 </section>
 
-<!-- WHATSAPP BUTTON -->
-<a href="https://wa.me/918805102045?text=Hi%20I%20want%20to%20know%20about%20your%20products" class="whatsapp-btn" target="_blank">
-💬
+<!-- WHATSAPP -->
+<a href="https://wa.me/918805102045" class="whatsapp-btn" target="_blank">
+<i class="fab fa-whatsapp"></i>
 </a>
 
 </body>
