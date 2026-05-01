@@ -5,165 +5,126 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Radha Industries</title>
 
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-
 <style>
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding-top: 80px
-    color: #333;
+  margin: 0;
+  font-family: Arial, sans-serif;
 }
 
 /* HEADER */
 header {
-    
   background: #8B0000;
-  padding: 15px 0;
+  padding: 15px;
   position: fixed;
   width: 100%;
   top: 0;
-  z-index: 1000;
 }
 
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: auto;
+/* SIMPLE NAV (NO FLEX BUGS) */
+.navbar {
+  text-align: center;
 }
 
-.nav-links {
-  display: flex;
-  gap: 20px;
-  list-style: none;
-}
-
-.nav-links a {
+.navbar a {
   color: white;
   text-decoration: none;
-  font-weight: 500;
+  margin: 0 15px;
+  font-weight: bold;
+  font-size: 16px;
 }
 
-.nav-links a:hover {
-  color: #ffd700;
-
-}
-
-nav {
-
-    .nav-links {
-  display: flex;
-  list-style: none;
-  gap: 25px;
-}
-
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.nav-links a:hover {
-  color: #ffd700;
-}
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-}
-
-.logo img {
-    height: 40px;
+.navbar a:hover {
+  color: yellow;
 }
 
 /* HERO */
 .hero {
-    background: #111;
-    color: white;
-    text-align: center;
-    padding: 120px 20px 60px;
-}
-
-.hero h1 {
-    font-size: 36px;
-}
-
-.cta-button {
-    background: white;
-    color: #8B0000;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    display: inline-block;
-    margin-top: 20px;
+  margin-top: 80px;
+  background: #111;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
 }
 
 /* PRODUCTS */
 .section {
-    padding: 60px 20px;
-    text-align: center;
+  padding: 60px 20px;
+  text-align: center;
 }
 
 .products {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 20px;
 }
 
 .card {
-    padding: 20px;
-    border: 1px solid #eee;
-    border-radius: 10px;
+  border: 1px solid #eee;
+  padding: 20px;
+  border-radius: 10px;
 }
 
 .card a {
-    display: inline-block;
-    margin-top: 10px;
-    background: #8B0000;
-    color: white;
-    padding: 8px 15px;
-    text-decoration: none;
-    border-radius: 5px;
+  display: inline-block;
+  margin-top: 10px;
+  background: #8B0000;
+  color: white;
+  padding: 8px 15px;
+  text-decoration: none;
+  border-radius: 5px;
 }
 
-/* CONTACT */
-.contact {
-    background: #f5f5f5;
-    padding: 50px;
-    text-align: center;
+/* CLIENTS */
+.logo-slider {
+  overflow: hidden;
 }
 
-/* FOOTER */
-footer {
-    background: #111;
-    color: white;
-    text-align: center;
-    padding: 20px;
+.logo-track {
+  display: flex;
+  animation: scroll 20s linear infinite;
+}
+
+.logo-track img {
+  height: 60px;
+  margin: 0 30px;
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* MAP */
+.map iframe {
+  width: 100%;
+  height: 300px;
+  border: none;
 }
 </style>
 </head>
 
 <body>
-    body {
-  margin: 0;
-  padding-top: 80px;
-}
+
 <!-- HEADER -->
 <header>
-<nav>
-<div class="logo">
-<img src="logo.png" alt="Radha Logo">
+
+<div style="text-align:center; margin-bottom:10px;">
+<img src="logo.png" style="height:40px;">
 </div>
-<div>RADHA INDUSTRIES</div>
-</nav>
+
+<div class="navbar">
+<a href="#home">Home</a>
+<a href="#products">Products</a>
+<a href="#clients">Clients</a>
+<a href="#contact">Contact</a>
+</div>
+
 </header>
 
-<!-- HERO --><section id="home" class="hero">
+<!-- HERO -->
+<section id="home" class="hero">
 <h1>Industrial Solutions That Actually Work</h1>
 <p>Precision engineering, water treatment, and industrial products trusted across India.</p>
-<a href="#products" class="cta-button">View Products</a>
 </section>
 
 <!-- PRODUCTS -->
@@ -205,20 +166,39 @@ footer {
 </div>
 </section>
 
+<!-- CLIENTS -->
+<section id="clients" class="section">
+<h2>Our Clients</h2>
+
+<div class="logo-slider">
+<div class="logo-track">
+
+<img src="client1.png">
+<img src="client2.png">
+<img src="client3.png">
+
+<img src="client1.png">
+<img src="client2.png">
+<img src="client3.png">
+
+</div>
+</div>
+</section>
+
 <!-- CONTACT -->
-<section class="contact">
+<section id="contact" class="section">
 <h2>Contact Us</h2>
 
-<p><strong>Name:</strong> SUILPAGRE</p>
+<p><strong>Name:</strong> Sunil Pagare</p>
 <p><strong>Phone:</strong> 8805102045</p>
 <p><strong>Email:</strong> info@radhaindustries.com</p>
 
 </section>
 
-<!-- FOOTER -->
-<footer>
-<p>© 2026 Radha Industries</p>
-</footer>
+<!-- MAP -->
+<section class="map">
+<iframe src="https://maps.google.com/maps?q=India&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+</section>
 
 </body>
 </html>
