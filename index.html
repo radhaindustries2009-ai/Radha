@@ -9,17 +9,18 @@
 
 <style>
 
-/* RESET */
+/* BASE */
 body {
-    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     margin: 0;
     color: #111;
+    background: #ffffff;
 }
 
 /* HEADER */
 header {
     background: #8B0000;
-    padding: 15px 0;
+    padding: 14px 0;
     position: fixed;
     width: 100%;
     top: 0;
@@ -30,18 +31,18 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
+    max-width: 1150px;
     margin: auto;
     padding: 0 20px;
 }
 
 .logo img {
-    height: 40px;
+    height: 38px;
 }
 
 .nav-links {
     display: flex;
-    gap: 25px;
+    gap: 28px;
     list-style: none;
 }
 
@@ -49,89 +50,99 @@ nav {
     color: white;
     text-decoration: none;
     font-weight: 500;
-}
-
-.nav-links a:hover {
-    color: #ffd700;
+    font-size: 15px;
 }
 
 /* HERO */
 .hero {
-    background: #0d0d0d;
+    background: #0b0b0b;
     color: white;
     text-align: center;
-    padding: 150px 20px 100px;
+    padding: 150px 20px 110px;
 }
 
 .hero h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
+    font-size: 38px;
+    margin-bottom: 12px;
 }
 
 .hero p {
-    color: #aaa;
+    color: #bbb;
+    font-size: 16px;
 }
 
 /* SECTION */
 .section {
-    padding: 70px 20px;
+    padding: 80px 20px;
     text-align: center;
 }
 
 /* PRODUCTS */
 .products {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+    gap: 28px;
     max-width: 1100px;
     margin: auto;
 }
 
 .card {
-    padding: 25px;
-    border: 1px solid #eee;
-    border-radius: 12px;
-    transition: 0.2s;
+    padding: 28px;
+    border-radius: 14px;
+    background: #ffffff;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    transition: all 0.25s ease;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px);
+}
+
+.card h3 {
+    margin-bottom: 8px;
+}
+
+.card p {
+    color: #666;
+    font-size: 14px;
 }
 
 .card a {
     display: inline-block;
-    margin-top: 12px;
+    margin-top: 15px;
     background: #8B0000;
     color: white;
-    padding: 8px 15px;
+    padding: 9px 16px;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 6px;
+    font-size: 14px;
 }
 
 /* CLIENTS */
 .clients-slider {
-  overflow: hidden;
+    overflow: hidden;
 }
 
 .slide-track {
-  display: flex;
-  animation: scroll 20s linear infinite;
+    display: flex;
+    animation: scroll 20s linear infinite;
 }
 
 .slide-track img {
-  width: 120px;
-  margin: 20px;
+    width: 110px;
+    margin: 25px;
+    opacity: 0.7;
 }
 
 @keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
 }
 
 /* CONTACT */
 .contact {
-    background: #f7f7f7;
-    padding: 60px;
+    background: #f8f8f8;
+    padding: 70px;
 }
 
 /* MAP */
@@ -141,33 +152,32 @@ nav {
     border: 0;
 }
 
-/* WHATSAPP */
+/* BUTTONS */
 .whatsapp-btn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25D366;
-  color: white;
-  padding: 12px 18px;
-  border-radius: 30px;
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  text-decoration: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 30px;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
 }
 
-/* CALL BUTTON */
 .call-btn {
-  position: fixed;
-  bottom: 80px;
-  right: 20px;
-  background: #007bff;
-  color: white;
-  padding: 12px 18px;
-  border-radius: 30px;
-  font-size: 16px;
-  text-decoration: none;
+    position: fixed;
+    bottom: 75px;
+    right: 20px;
+    background: #007bff;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 30px;
+    font-size: 15px;
+    text-decoration: none;
 }
 
 </style>
@@ -210,14 +220,8 @@ nav {
 </div>
 
 <div class="card">
-<h3>Effluent Treatment Chemical</h3>
-<p>Removes dyes and reduces pollution.</p>
-<a href="water-solutions.pdf" target="_blank">View Details</a>
-</div>
-
-<div class="card">
-<h3>Water Testing Kits</h3>
-<p>Accurate industrial water testing.</p>
+<h3>Water Solutions</h3>
+<p>Chemicals, testing kits, and complete water treatment systems.</p>
 <a href="water-solutions.pdf" target="_blank">View Details</a>
 </div>
 
@@ -225,12 +229,6 @@ nav {
 <h3>Mechanical Seals</h3>
 <p>Reliable sealing for heavy machinery.</p>
 <a href="seals.pdf" target="_blank">View Details</a>
-</div>
-
-<div class="card">
-<h3>Water Treatment Systems</h3>
-<p>Complete RO, STP, and filtration solutions.</p>
-<a href="water-solutions.pdf" target="_blank">View Details</a>
 </div>
 
 </div>
