@@ -60,7 +60,12 @@ padding:140px 20px 60px;
 
 /* VIDEO */
 .video-section h2{
-margin-bottom:30px;
+margin-bottom:50px; /* gap fix */
+}
+
+.video-wrapper{
+display:flex;
+justify-content:center;
 }
 
 .video-section iframe{
@@ -68,6 +73,17 @@ width:100%;
 max-width:900px;
 height:500px;
 border-radius:12px;
+
+/* 🔥 subtle zoom animation */
+transform:scale(0.95);
+opacity:0;
+transition:all 0.8s ease;
+}
+
+/* animate when visible */
+.video-section.show iframe{
+transform:scale(1);
+opacity:1;
 }
 
 /* WHY */
@@ -223,9 +239,13 @@ text-decoration:none;
 <p>Trusted across India for 20+ years</p>
 </section>
 
-<section class="section video-section">
+<section class="section video-section" id="video">
 <h2>See Our Work in Action</h2>
+
+<div class="video-wrapper">
 <iframe src="https://www.youtube.com/embed/dcUx-JrbZno?autoplay=1&mute=1&loop=1&playlist=dcUx-JrbZno"></iframe>
+</div>
+
 </section>
 
 <!-- WHY -->
@@ -293,7 +313,12 @@ text-decoration:none;
 <section class="map">
 <h2 style="text-align:center;">Our Location</h2>
 
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3753.1620406418833!2d72.72222339999999!3d19.833095499999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be71f1fa059cc4b%3A0xfa7343749557ebe0!2sRADHA%20INDUSTRIES!5e0!3m2!1sen!2sin!4v1777966067042!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<iframe 
+src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3753.1620406418833!2d72.72222339999999!3d19.833095499999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be71f1fa059cc4b%3A0xfa7343749557ebe0!2sRADHA%20INDUSTRIES!5e0!3m2!1sen!2sin!4v1777966067042!5m2!1sen!2sin"
+allowfullscreen="" 
+loading="lazy" 
+referrerpolicy="no-referrer-when-downgrade">
+</iframe>
 
 </section>
 
@@ -307,9 +332,12 @@ text-decoration:none;
 </a>
 
 <script>
+
+/* circle animation */
 let triggered = false;
 
 window.addEventListener('scroll', () => {
+
 let section = document.getElementById('why');
 
 if(!triggered && section.getBoundingClientRect().top < window.innerHeight - 100){
@@ -319,7 +347,16 @@ document.querySelectorAll('.progress').forEach(el => {
 el.style.strokeDashoffset = 80;
 });
 }
+
+/* 🔥 video animation trigger */
+let video = document.getElementById('video');
+
+if(video.getBoundingClientRect().top < window.innerHeight - 100){
+video.classList.add('show');
+}
+
 });
+
 </script>
 
 </body>
