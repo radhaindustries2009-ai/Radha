@@ -9,6 +9,11 @@
 
 <style>
 
+/* FIX SCROLL BUG */
+html, body {
+    overflow-x: hidden;
+}
+
 /* BASE */
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -39,13 +44,8 @@ nav {
 
 .nav-links {
     display: flex;
-    gap: 28px;
+    gap: 20px;
     list-style: none;
-}
-
-.nav-links a {
-    color: white;
-    text-decoration: none;
 }
 
 /* HERO */
@@ -53,20 +53,20 @@ nav {
     background: #0b0b0b;
     color: white;
     text-align: center;
-    padding: 120px 20px 60px;
+    padding: 110px 20px 50px;
 }
 
 /* SECTION */
 .section {
-    padding: 60px 20px;
+    padding: 50px 20px;
     text-align: center;
 }
 
 /* VIDEO */
 .video-section iframe {
-    width: 85%;
+    width: 100%;
     max-width: 900px;
-    height: 480px;
+    height: 400px;
     border-radius: 12px;
 }
 
@@ -77,36 +77,28 @@ nav {
 
 .why-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px,1fr));
-    gap: 20px;
-    max-width: 1000px;
+    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+    gap: 15px;
+    max-width: 900px;
     margin: auto;
 }
 
 .why-box {
     background: white;
-    padding: 25px;
-    border-radius: 12px;
-    transition: 0.3s;
-}
-
-.why-box:hover {
-    transform: translateY(-6px);
+    padding: 20px;
+    border-radius: 10px;
 }
 
 .counter {
-    font-size: 34px;
+    font-size: 30px;
     font-weight: bold;
     color: #8B0000;
-    text-shadow: 0 0 10px rgba(139,0,0,0.3);
 }
 
-/* PROGRESS BAR */
+/* BAR */
 .bar {
-    height: 6px;
+    height: 5px;
     background: #eee;
-    border-radius: 10px;
-    overflow: hidden;
     margin-top: 10px;
 }
 
@@ -114,50 +106,41 @@ nav {
     height: 100%;
     width: 0;
     background: #8B0000;
-    transition: width 1.5s ease;
+    transition: width 1.2s ease;
 }
 
 /* PRODUCTS */
 .products {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
-    gap: 28px;
-    max-width: 1100px;
+    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+    gap: 20px;
+    max-width: 1000px;
     margin: auto;
 }
 
 .card {
-    padding: 28px;
-    border-radius: 14px;
+    padding: 20px;
     background: #fff;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
+    border-radius: 10px;
 }
 
 .card a {
-    display: inline-block;
-    margin-top: 12px;
     background: #8B0000;
     color: white;
-    padding: 9px 16px;
-    border-radius: 6px;
+    padding: 8px 14px;
+    border-radius: 5px;
     text-decoration: none;
 }
 
 /* CLIENTS */
 .slide-track {
     display: flex;
-    animation: scroll 20s linear infinite;
+    animation: scroll 25s linear infinite;
 }
 
 .slide-track img {
-    width: 110px;
-    margin: 25px;
-    opacity: 0.7;
+    width: 90px;
+    margin: 20px;
 }
 
 @keyframes scroll {
@@ -167,36 +150,35 @@ nav {
 /* CONTACT */
 .contact {
     background: #f8f8f8;
-    padding: 60px;
+    padding: 50px;
 }
 
 /* MAP */
 .map iframe {
     width: 100%;
-    height: 350px;
+    height: 300px;
+    border: 0;
 }
 
 /* BUTTONS */
 .whatsapp-btn {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 15px;
+    right: 15px;
     background: #25D366;
     color: white;
-    padding: 12px 18px;
-    border-radius: 30px;
-    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 25px;
 }
 
 .call-btn {
     position: fixed;
-    bottom: 75px;
-    right: 20px;
+    bottom: 65px;
+    right: 15px;
     background: #007bff;
     color: white;
-    padding: 12px 18px;
-    border-radius: 30px;
-    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 25px;
 }
 
 </style>
@@ -208,15 +190,15 @@ nav {
 <nav>
 <div class="logo"><img src="logo.png"></div>
 <ul class="nav-links">
-<li><a href="#home">Home</a></li>
-<li><a href="#products">Products</a></li>
-<li><a href="#clients">Clients</a></li>
-<li><a href="#contact">Contact</a></li>
+<li>Home</li>
+<li>Products</li>
+<li>Clients</li>
+<li>Contact</li>
 </ul>
 </nav>
 </header>
 
-<section id="home" class="hero">
+<section class="hero">
 <h1>Industrial Solutions That Actually Work</h1>
 <p>Trusted by leading companies across India for 20+ years.</p>
 </section>
@@ -226,7 +208,7 @@ nav {
 <iframe src="https://www.youtube.com/embed/dcUx-JrbZno?autoplay=1&mute=1&loop=1&playlist=dcUx-JrbZno"></iframe>
 </section>
 
-<!-- WHY US -->
+<!-- WHY -->
 <section class="section why" id="why">
 <h2>Why Choose Us</h2>
 
@@ -244,61 +226,46 @@ nav {
 <div class="bar"><div class="bar-fill" data-fill="95%"></div></div>
 </div>
 
-<div class="why-box">
-<div class="counter" data-target="50">0</div>
-<p>Top Clients</p>
-<div class="bar"><div class="bar-fill" data-fill="85%"></div></div>
-</div>
-
 </div>
 </section>
 
-<section id="products" class="section">
+<!-- PRODUCTS -->
+<section class="section">
 <h2>Our Products</h2>
+
 <div class="products">
-
-<div class="card">
-<h3>Gland Packing</h3>
-<a href="gland-packing.pdf">View Details</a>
+<div class="card"><h3>Gland Packing</h3><a href="gland-packing.pdf">View</a></div>
+<div class="card"><h3>Water Solutions</h3><a href="water-solutions.pdf">View</a></div>
+<div class="card"><h3>Mechanical Seals</h3><a href="seals.pdf">View</a></div>
 </div>
 
-<div class="card">
-<h3>Water Solutions</h3>
-<a href="water-solutions.pdf">View Details</a>
-</div>
-
-<div class="card">
-<h3>Mechanical Seals</h3>
-<a href="seals.pdf">View Details</a>
-</div>
-
-</div>
 </section>
 
-<section id="clients" class="section">
+<!-- CLIENTS -->
+<section class="section">
 <h2>Our Clients</h2>
 <div class="slide-track">
-<img src="client1.png">
-<img src="client2.png">
-<img src="client3.png">
-<img src="client1.png">
-<img src="client2.png">
-<img src="client3.png">
+<img src="client1.png"><img src="client2.png"><img src="client3.png">
+<img src="client1.png"><img src="client2.png"><img src="client3.png">
 </div>
 </section>
 
-<section id="contact" class="contact">
+<!-- CONTACT -->
+<section class="contact">
 <h2>Contact Us</h2>
-<p><strong>Name:</strong> Sunil Pagare</p>
-<p><strong>Phone:</strong> 8805102045 / 8810202045</p>
-<p><strong>Email:</strong> info@radha-industries.com</p>
+<p>Sunil Pagare</p>
+<p>8805102045 / 8810202045</p>
+<p>info@radha-industries.com</p>
 </section>
 
+<!-- MAP (FIXED) -->
 <section class="map">
-<iframe src="https://www.google.com/maps/embed"></iframe>
+<h2>Our Location</h2>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3753.1620406418833!2d72.72222339999999!3d19.833095499999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be71f1fa059cc4b%3A0xfa7343749557ebe0!2sRADHA%20INDUSTRIES!5e0!3m2!1sen!2sin!4v1777618940678!5m2!1sen!2sin">
+</iframe>
 </section>
 
-<a href="tel:8805102045" class="call-btn">📞 Call Now</a>
+<a href="tel:8805102045" class="call-btn">Call</a>
 <a href="https://wa.me/918805102045" class="whatsapp-btn">WhatsApp</a>
 
 <script>
@@ -310,10 +277,9 @@ const observer = new IntersectionObserver((entries) => {
     document.querySelectorAll('.counter').forEach(counter => {
       let target = +counter.dataset.target;
       let count = 0;
-      let step = target / 80;
 
       function update(){
-        count += step;
+        count += target / 50;
         if(count < target){
           counter.innerText = Math.floor(count) + "+";
           requestAnimationFrame(update);
