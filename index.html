@@ -9,16 +9,16 @@
 
 <style>
 
-/* 🔥 GLOBAL FIX */
+/* RESET */
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-html, body {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
+body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    overflow-x: hidden;
 }
 
 /* HEADER */
@@ -31,25 +31,22 @@ header {
 }
 
 nav {
+    max-width: 1200px;
+    margin: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1150px;
-    margin: auto;
-    padding: 14px 20px;
-    flex-wrap: wrap;
+    padding: 15px 20px;
 }
 
 .logo img {
-    height: 38px;
+    height: 40px;
 }
 
 .nav-links {
     display: flex;
-    gap: 20px;
+    gap: 25px;
     list-style: none;
-    flex-wrap: wrap;
-    justify-content: center;
 }
 
 .nav-links a {
@@ -63,72 +60,77 @@ nav {
     background: #0b0b0b;
     color: white;
     text-align: center;
-    padding: 110px 15px 40px;
+    padding: 140px 20px 60px;
 }
 
 .hero h1 {
-    font-size: 28px;
+    font-size: 36px;
 }
 
 .hero p {
     color: #bbb;
+    margin-top: 8px;
 }
 
 /* SECTION */
 .section {
-    padding: 50px 15px;
+    padding: 70px 20px;
     text-align: center;
 }
 
 /* VIDEO */
 .video-section iframe {
     width: 100%;
-    height: 220px;
+    max-width: 900px;
+    height: 500px;
     border-radius: 12px;
 }
 
 /* WHY */
 .why {
-    background: #f8f8f8;
+    background: #f5f5f5;
 }
 
 .why-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-    max-width: 500px;
-    margin: auto;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
 }
 
 .why-box {
     background: white;
-    padding: 25px;
+    padding: 30px;
     border-radius: 12px;
+    width: 260px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.05);
 }
 
-/* 🔴 CIRCLE */
+/* 🔴 CIRCLE FIX */
 .circle {
-    position: relative;
-    width: 110px;
-    height: 110px;
+    width: 130px;
+    height: 130px;
     margin: auto;
+    position: relative;
 }
 
-.circle svg {
+svg {
     transform: rotate(-90deg);
 }
 
-.circle circle {
+circle {
     fill: none;
-    stroke-width: 8;
-    stroke: #ddd;
+    stroke-width: 10;
+    stroke: #eee;
 }
 
 .progress {
-    stroke: #8B0000; /* RED FIX */
-    stroke-dasharray: 283;
-    stroke-dashoffset: 283;
+    stroke: #ff2d2d; /* 🔴 RED */
+    stroke-dasharray: 314;
+    stroke-dashoffset: 314;
+    stroke-linecap: round;
     transition: stroke-dashoffset 2s ease;
+    filter: drop-shadow(0 0 8px rgba(255,0,0,0.5));
 }
 
 .number {
@@ -137,28 +139,28 @@ nav {
     left: 50%;
     transform: translate(-50%, -50%);
     font-weight: bold;
-    font-size: 20px;
+    font-size: 22px;
 }
 
 /* PRODUCTS */
 .products {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-    max-width: 600px;
-    margin: auto;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
 }
 
 .card {
+    background: white;
     padding: 25px;
     border-radius: 12px;
-    background: #fff;
+    width: 260px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.05);
 }
 
 .card a {
-    display: inline-block;
     margin-top: 10px;
+    display: inline-block;
     background: #8B0000;
     color: white;
     padding: 8px 15px;
@@ -173,54 +175,60 @@ nav {
 
 .slide-track {
     display: flex;
-    animation: scroll 18s linear infinite;
+    animation: scroll 20s linear infinite;
 }
 
 .slide-track img {
-    width: 90px;
-    margin: 15px;
+    width: 120px;
+    margin: 20px;
 }
 
 @keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    0% {transform: translateX(0);}
+    100% {transform: translateX(-50%);}
 }
 
 /* CONTACT */
 .contact {
-    background: #f8f8f8;
-    padding: 50px 20px;
+    background: #f5f5f5;
+    padding: 60px;
 }
 
 /* MAP */
 .map iframe {
     width: 100%;
-    height: 300px;
-    border: 0;
+    height: 350px;
 }
 
 /* BUTTONS */
 .call-btn, .whatsapp-btn {
     position: fixed;
-    right: 10px;
-    padding: 10px 14px;
+    right: 20px;
+    padding: 12px 18px;
     border-radius: 30px;
+    color: white;
     display: flex;
     align-items: center;
-    gap: 6px;
-    color: white;
+    gap: 8px;
     text-decoration: none;
-    font-size: 13px;
 }
 
 .call-btn {
-    bottom: 70px;
+    bottom: 80px;
     background: #007bff;
 }
 
 .whatsapp-btn {
     bottom: 20px;
     background: #25D366;
+}
+
+/* MOBILE FIX */
+@media(max-width:768px){
+.hero h1{font-size:26px;}
+.video-section iframe{height:250px;}
+.why-grid{flex-direction:column;align-items:center;}
+.products{flex-direction:column;align-items:center;}
 }
 
 </style>
@@ -259,22 +267,22 @@ nav {
 
 <div class="why-box">
 <div class="circle" data-value="20">
-<svg width="110" height="110">
-<circle cx="55" cy="55" r="45"></circle>
-<circle cx="55" cy="55" r="45" class="progress"></circle>
+<svg width="130" height="130">
+<circle cx="65" cy="65" r="50"></circle>
+<circle cx="65" cy="65" r="50" class="progress"></circle>
 </svg>
-<div class="number">0+</div>
+<div class="number">20+</div>
 </div>
 <p>Years Experience</p>
 </div>
 
 <div class="why-box">
-<div class="circle" data-value="1000">
-<svg width="110" height="110">
-<circle cx="55" cy="55" r="45"></circle>
-<circle cx="55" cy="55" r="45" class="progress"></circle>
+<div class="circle" data-value="100">
+<svg width="130" height="130">
+<circle cx="65" cy="65" r="50"></circle>
+<circle cx="65" cy="65" r="50" class="progress"></circle>
 </svg>
-<div class="number">0+</div>
+<div class="number">1000+</div>
 </div>
 <p>Projects Completed</p>
 </div>
@@ -282,55 +290,42 @@ nav {
 </div>
 </section>
 
+<!-- PRODUCTS -->
 <section id="products" class="section">
 <h2>Our Products</h2>
 
 <div class="products">
-
-<div class="card">
-<h3>Gland Packing</h3>
-<a href="gland-packing.pdf">View Details</a>
-</div>
-
-<div class="card">
-<h3>Water Solutions</h3>
-<a href="water-solutions.pdf">View Details</a>
-</div>
-
-<div class="card">
-<h3>Mechanical Seals</h3>
-<a href="seals.pdf">View Details</a>
-</div>
-
+<div class="card"><h3>Gland Packing</h3><a href="gland-packing.pdf">View</a></div>
+<div class="card"><h3>Water Solutions</h3><a href="water-solutions.pdf">View</a></div>
+<div class="card"><h3>Mechanical Seals</h3><a href="seals.pdf">View</a></div>
 </div>
 </section>
 
+<!-- CLIENTS -->
 <section id="clients" class="section">
 <h2>Our Clients</h2>
 <div class="clients-slider">
 <div class="slide-track">
-<img src="client1.png">
-<img src="client2.png">
-<img src="client3.png">
-<img src="client1.png">
-<img src="client2.png">
-<img src="client3.png">
+<img src="client1.png"><img src="client2.png"><img src="client3.png">
+<img src="client1.png"><img src="client2.png"><img src="client3.png">
 </div>
 </div>
 </section>
 
+<!-- CONTACT -->
 <section id="contact" class="contact">
 <h2>Contact Us</h2>
-<p><strong>Name:</strong> Sunil Pagare</p>
-<p><strong>Phone:</strong> 8805102045 / 8810202045</p>
-<p><strong>Email:</strong> info@radha-industries.com</p>
+<p>Sunil Pagare</p>
+<p>8805102045 / 8810202045</p>
+<p>info@radha-industries.com</p>
 </section>
 
+<!-- MAP -->
 <section class="map">
-<h2>Our Location</h2>
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3753.1620406418833!2d72.72222339999999!3d19.833095499999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be71f1fa059cc4b%3A0xfa7343749557ebe0!2sRADHA%20INDUSTRIES!5e0!3m2!1sen!2sin"></iframe>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3753.1620406418833!2d72.72222339999999!3d19.833095499999995"></iframe>
 </section>
 
+<!-- BUTTONS -->
 <a href="tel:8805102045" class="call-btn">
 <i class="fas fa-phone"></i> Call
 </a>
@@ -340,40 +335,16 @@ nav {
 </a>
 
 <script>
-let triggered=false;
+let triggered = false;
 
-window.addEventListener('scroll',()=>{
-const section=document.getElementById('why');
+window.addEventListener('scroll', () => {
+let section = document.getElementById('why');
 
-if(!triggered && section.getBoundingClientRect().top < window.innerHeight-100){
-triggered=true;
+if(!triggered && section.getBoundingClientRect().top < window.innerHeight - 100){
+triggered = true;
 
-document.querySelectorAll('.circle').forEach(circle=>{
-let value=parseInt(circle.dataset.value);
-let progress=circle.querySelector('.progress');
-let number=circle.querySelector('.number');
-
-let radius=45;
-let circumference=2*Math.PI*radius;
-
-let percent = value === 20 ? 20 : 100;
-let offset=circumference-(percent/100)*circumference;
-
-progress.style.strokeDashoffset=offset;
-
-/* COUNT */
-let count=0;
-let step=value/50;
-
-let interval=setInterval(()=>{
-count+=step;
-if(count>=value){
-count=value;
-clearInterval(interval);
-}
-number.innerText = count.toLocaleString() + "+";
-},20);
-
+document.querySelectorAll('.progress').forEach(el => {
+el.style.strokeDashoffset = 80; // smooth visible fill
 });
 }
 });
