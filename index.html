@@ -10,225 +10,190 @@
 <style>
 
 /* RESET */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    overflow-x: hidden;
-}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;overflow-x:hidden;}
 
 /* HEADER */
-header {
-    background: #8B0000;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
+header{
+background:#8B0000;
+position:fixed;
+width:100%;
+top:0;
+z-index:1000;
 }
 
-nav {
-    max-width: 1200px;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px;
+nav{
+max-width:1200px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 20px;
 }
 
-.logo img {
-    height: 40px;
+.logo img{height:40px;}
+
+.nav-links{
+display:flex;
+gap:25px;
+list-style:none;
 }
 
-.nav-links {
-    display: flex;
-    gap: 25px;
-    list-style: none;
-}
-
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
+.nav-links a{
+color:white;
+text-decoration:none;
 }
 
 /* HERO */
-.hero {
-    background: #0b0b0b;
-    color: white;
-    text-align: center;
-    padding: 140px 20px 60px;
+.hero{
+background:#0b0b0b;
+color:white;
+text-align:center;
+padding:140px 20px 60px;
 }
 
-.hero h1 {
-    font-size: 36px;
-}
-
-.hero p {
-    color: #bbb;
-    margin-top: 8px;
-}
+.hero h1{font-size:36px;}
+.hero p{color:#bbb;margin-top:8px;}
 
 /* SECTION */
-.section {
-    padding: 70px 20px;
-    text-align: center;
-}
+.section{padding:70px 20px;text-align:center;}
 
 /* VIDEO */
-.video-section iframe {
-    width: 100%;
-    max-width: 900px;
-    height: 500px;
-    border-radius: 12px;
+.video-section iframe{
+width:100%;
+max-width:900px;
+height:500px;
+border-radius:12px;
 }
 
 /* WHY */
-.why {
-    background: #f5f5f5;
+.why{background:#f5f5f5;}
+
+.why-grid{
+display:flex;
+justify-content:center;
+gap:40px;
+flex-wrap:wrap;
 }
 
-.why-grid {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
+.why-box{
+background:white;
+padding:30px;
+border-radius:12px;
+width:260px;
+box-shadow:0 5px 25px rgba(0,0,0,0.05);
 }
 
-.why-box {
-    background: white;
-    padding: 30px;
-    border-radius: 12px;
-    width: 260px;
-    box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+/* CIRCLE */
+.circle{
+width:130px;
+height:130px;
+margin:auto;
+position:relative;
 }
 
-/* 🔴 CIRCLE FIX */
-.circle {
-    width: 130px;
-    height: 130px;
-    margin: auto;
-    position: relative;
+svg{transform:rotate(-90deg);}
+
+circle{
+fill:none;
+stroke-width:10;
+stroke:#eee;
 }
 
-svg {
-    transform: rotate(-90deg);
+.progress{
+stroke:#ff2d2d;
+stroke-dasharray:314;
+stroke-dashoffset:314;
+stroke-linecap:round;
+transition:stroke-dashoffset 2s ease;
 }
 
-circle {
-    fill: none;
-    stroke-width: 10;
-    stroke: #eee;
-}
-
-.progress {
-    stroke: #ff2d2d; /* 🔴 RED */
-    stroke-dasharray: 314;
-    stroke-dashoffset: 314;
-    stroke-linecap: round;
-    transition: stroke-dashoffset 2s ease;
-    filter: drop-shadow(0 0 8px rgba(255,0,0,0.5));
-}
-
-.number {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-weight: bold;
-    font-size: 22px;
+.number{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+font-weight:bold;
+font-size:22px;
 }
 
 /* PRODUCTS */
-.products {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    flex-wrap: wrap;
+.products{
+display:flex;
+justify-content:center;
+gap:25px;
+flex-wrap:wrap;
 }
 
-.card {
-    background: white;
-    padding: 25px;
-    border-radius: 12px;
-    width: 260px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+.card{
+background:white;
+padding:25px;
+border-radius:12px;
+width:260px;
+box-shadow:0 5px 20px rgba(0,0,0,0.05);
 }
 
-.card a {
-    margin-top: 10px;
-    display: inline-block;
-    background: #8B0000;
-    color: white;
-    padding: 8px 15px;
-    border-radius: 6px;
-    text-decoration: none;
+.card a{
+margin-top:10px;
+display:inline-block;
+background:#8B0000;
+color:white;
+padding:8px 15px;
+border-radius:6px;
+text-decoration:none;
 }
 
 /* CLIENTS */
-.clients-slider {
-    overflow: hidden;
+.clients-slider{overflow:hidden;}
+
+.slide-track{
+display:flex;
+animation:scroll 20s linear infinite;
 }
 
-.slide-track {
-    display: flex;
-    animation: scroll 20s linear infinite;
+.slide-track img{
+width:120px;
+margin:20px;
 }
 
-.slide-track img {
-    width: 120px;
-    margin: 20px;
-}
-
-@keyframes scroll {
-    0% {transform: translateX(0);}
-    100% {transform: translateX(-50%);}
+@keyframes scroll{
+0%{transform:translateX(0);}
+100%{transform:translateX(-50%);}
 }
 
 /* CONTACT */
-.contact {
-    background: #f5f5f5;
-    padding: 60px;
+.contact{
+background:#f5f5f5;
+padding:60px;
 }
 
 /* MAP */
-.map iframe {
-    width: 100%;
-    height: 350px;
+.map iframe{
+width:100%;
+height:350px;
+border:0;
 }
 
 /* BUTTONS */
-.call-btn, .whatsapp-btn {
-    position: fixed;
-    right: 20px;
-    padding: 12px 18px;
-    border-radius: 30px;
-    color: white;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
+.call-btn,.whatsapp-btn{
+position:fixed;
+right:20px;
+padding:12px 18px;
+border-radius:30px;
+color:white;
+display:flex;
+align-items:center;
+gap:8px;
+text-decoration:none;
 }
 
-.call-btn {
-    bottom: 80px;
-    background: #007bff;
-}
+.call-btn{bottom:80px;background:#007bff;}
+.whatsapp-btn{bottom:20px;background:#25D366;}
 
-.whatsapp-btn {
-    bottom: 20px;
-    background: #25D366;
-}
-
-/* MOBILE FIX */
+/* MOBILE */
 @media(max-width:768px){
 .hero h1{font-size:26px;}
 .video-section iframe{height:250px;}
-.why-grid{flex-direction:column;align-items:center;}
-.products{flex-direction:column;align-items:center;}
 }
 
 </style>
@@ -266,7 +231,7 @@ circle {
 <div class="why-grid">
 
 <div class="why-box">
-<div class="circle" data-value="20">
+<div class="circle">
 <svg width="130" height="130">
 <circle cx="65" cy="65" r="50"></circle>
 <circle cx="65" cy="65" r="50" class="progress"></circle>
@@ -277,7 +242,7 @@ circle {
 </div>
 
 <div class="why-box">
-<div class="circle" data-value="100">
+<div class="circle">
 <svg width="130" height="130">
 <circle cx="65" cy="65" r="50"></circle>
 <circle cx="65" cy="65" r="50" class="progress"></circle>
@@ -320,9 +285,10 @@ circle {
 <p>info@radha-industries.com</p>
 </section>
 
-<!-- MAP -->
+<!-- ✅ FIXED MAP -->
 <section class="map">
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3753.1620406418833!2d72.72222339999999!3d19.833095499999995"></iframe>
+<h2 style="text-align:center;">Our Location</h2>
+<iframe src="https://www.google.com/maps?q=Radha%20Industries&output=embed"></iframe>
 </section>
 
 <!-- BUTTONS -->
@@ -334,6 +300,7 @@ circle {
 <i class="fab fa-whatsapp"></i> WhatsApp
 </a>
 
+<!-- ANIMATION SCRIPT -->
 <script>
 let triggered = false;
 
@@ -344,7 +311,7 @@ if(!triggered && section.getBoundingClientRect().top < window.innerHeight - 100)
 triggered = true;
 
 document.querySelectorAll('.progress').forEach(el => {
-el.style.strokeDashoffset = 80; // smooth visible fill
+el.style.strokeDashoffset = 80;
 });
 }
 });
