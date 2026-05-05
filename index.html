@@ -9,247 +9,231 @@
 
 <style>
 
-/* FIX HORIZONTAL BUG */
-html, body {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-}
+/* FIX */
+html, body { margin:0; padding:0; overflow-x:hidden; }
 
-/* BASE */
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    color: #111;
+    color:#111;
 }
 
 /* HEADER */
 header {
-    background: #8B0000;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
+    background:#8B0000;
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1000;
 }
 
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1150px;
-    margin: auto;
-    padding: 14px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    max-width:1150px;
+    margin:auto;
+    padding:14px 20px;
 }
 
-.logo img {
-    height: 38px;
-}
+.logo img { height:38px; }
 
 .nav-links {
-    display: flex;
-    gap: 25px;
-    list-style: none;
+    display:flex;
+    gap:25px;
+    list-style:none;
 }
 
 .nav-links a {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    transition: 0.2s;
+    color:white;
+    text-decoration:none;
+    font-weight:500;
 }
 
-.nav-links a:hover {
-    opacity: 0.7;
-}
-
-/* HERO (UPGRADED) */
+/* HERO */
 .hero {
-    background: linear-gradient(to bottom, #0b0b0b, #111);
-    color: white;
-    text-align: center;
-    padding: 120px 20px 50px;
+    background:linear-gradient(to bottom,#0b0b0b,#111);
+    color:white;
+    text-align:center;
+    padding:120px 20px 50px;
 }
 
 .hero h1 {
-    font-size: 40px;
-    animation: fadeUp 1s ease;
+    font-size:40px;
+    animation:fadeUp 1s ease;
 }
 
 .hero p {
-    color: #bbb;
-    margin-top: 10px;
-    animation: fadeUp 1.4s ease;
+    color:#bbb;
+    animation:fadeUp 1.4s ease;
 }
 
-/* ANIMATION */
 @keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from {opacity:0; transform:translateY(30px);}
+    to {opacity:1; transform:translateY(0);}
 }
 
 /* VIDEO */
 .video-section iframe {
-    width: 85%;
-    max-width: 900px;
-    height: 480px;
-    border-radius: 12px;
+    width:85%;
+    max-width:900px;
+    height:480px;
+    border-radius:12px;
 }
 
 /* SECTION */
 .section {
-    padding: 60px 20px;
-    text-align: center;
+    padding:60px 20px;
+    text-align:center;
 }
 
-/* WHY (ANIMATED) */
+/* WHY PREMIUM */
 .why {
-    background: #f8f8f8;
+    background:#f8f8f8;
 }
 
 .why-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
-    gap: 20px;
-    max-width: 900px;
-    margin: auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+    max-width:900px;
+    margin:auto;
 }
 
 .why-box {
-    background: white;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 5px 25px rgba(0,0,0,0.05);
-    transition: 0.3s;
+    background:white;
+    padding:30px;
+    border-radius:14px;
+    box-shadow:0 5px 25px rgba(0,0,0,0.05);
+    transition:0.3s;
 }
 
 .why-box:hover {
-    transform: translateY(-8px);
+    transform:translateY(-8px);
 }
 
-/* GLOW NUMBERS */
-.counter {
-    font-size: 28px;
-    font-weight: bold;
-    color: #8B0000;
-    text-shadow: 0 0 10px rgba(139,0,0,0.3);
+/* CIRCLE PREMIUM */
+.circle {
+    position:relative;
+    width:120px;
+    height:120px;
+    margin:auto;
+}
+
+.circle svg {
+    transform:rotate(-90deg);
+}
+
+.circle circle {
+    fill:none;
+    stroke-width:8;
+    stroke:#eee;
+}
+
+.progress {
+    stroke:url(#grad);
+    stroke-dasharray:283;
+    stroke-dashoffset:283;
+    transition:stroke-dashoffset 2s ease;
+}
+
+/* GLOW */
+.progress {
+    filter: drop-shadow(0 0 6px rgba(255,0,0,0.6));
+}
+
+.number {
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    font-weight:bold;
+    font-size:22px;
 }
 
 /* PRODUCTS */
 .products {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
-    gap: 25px;
-    max-width: 1100px;
-    margin: auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+    max-width:1100px;
+    margin:auto;
 }
 
 .card {
-    padding: 28px;
-    border-radius: 14px;
-    background: #fff;
-    box-shadow: 0 5px 25px rgba(0,0,0,0.05);
-    transition: 0.3s;
+    padding:28px;
+    border-radius:14px;
+    background:#fff;
+    box-shadow:0 5px 25px rgba(0,0,0,0.05);
+    transition:0.3s;
 }
 
-.card:hover {
-    transform: translateY(-6px);
-}
+.card:hover { transform:translateY(-6px); }
 
-/* PREMIUM BUTTON */
 .card a {
-    display: inline-block;
-    margin-top: 15px;
-    background: linear-gradient(45deg, #8B0000, #b30000);
-    color: white;
-    padding: 10px 18px;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: 0.3s;
+    display:inline-block;
+    margin-top:15px;
+    background:linear-gradient(45deg,#8B0000,#b30000);
+    color:white;
+    padding:10px 18px;
+    border-radius:8px;
+    text-decoration:none;
+    transition:0.3s;
 }
 
-.card a:hover {
-    transform: scale(1.05);
-}
+.card a:hover { transform:scale(1.05); }
 
 /* CLIENTS */
-.clients-slider {
-    overflow: hidden;
-}
+.clients-slider { overflow:hidden; }
 
 .slide-track {
-    display: flex;
-    animation: scroll 18s linear infinite;
+    display:flex;
+    animation:scroll 18s linear infinite;
 }
 
 .slide-track img {
-    width: 110px;
-    margin: 25px;
-    opacity: 0.7;
+    width:110px;
+    margin:25px;
+    opacity:0.7;
 }
 
 @keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    0%{transform:translateX(0);}
+    100%{transform:translateX(-50%);}
 }
 
 /* CONTACT */
 .contact {
-    background: #f8f8f8;
-    padding: 70px;
+    background:#f8f8f8;
+    padding:70px;
 }
 
 /* MAP */
 .map iframe {
-    width: 100%;
-    height: 350px;
-    border: 0;
+    width:100%;
+    height:350px;
+    border:0;
 }
 
-/* FLOAT BUTTONS */
+/* BUTTONS */
 .call-btn, .whatsapp-btn {
-    position: fixed;
-    right: 20px;
-    padding: 12px 16px;
-    border-radius: 30px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    color: white;
-    text-decoration: none;
-    font-size: 14px;
-    transition: 0.3s;
+    position:fixed;
+    right:20px;
+    padding:12px 16px;
+    border-radius:30px;
+    display:flex;
+    align-items:center;
+    gap:6px;
+    color:white;
+    text-decoration:none;
+    font-size:14px;
+    transition:0.3s;
 }
 
-.call-btn {
-    bottom: 75px;
-    background: #007bff;
-}
+.call-btn { bottom:75px; background:#007bff; }
+.whatsapp-btn { bottom:20px; background:#25D366; }
 
-.whatsapp-btn {
-    bottom: 20px;
-    background: #25D366;
-}
-
-/* BUTTON HOVER */
 .call-btn:hover, .whatsapp-btn:hover {
-    transform: scale(1.1);
-}
-
-/* MOBILE FIX */
-@media(max-width:768px){
-    .hero h1 {
-        font-size: 26px;
-    }
-
-    .video-section iframe {
-        height: 260px;
-        width: 100%;
-    }
+    transform:scale(1.1);
 }
 
 </style>
@@ -259,10 +243,7 @@ nav {
 
 <header>
 <nav>
-<div class="logo">
-<img src="logo.png">
-</div>
-
+<div class="logo"><img src="logo.png"></div>
 <ul class="nav-links">
 <li><a href="#home">Home</a></li>
 <li><a href="#products">Products</a></li>
@@ -279,27 +260,43 @@ nav {
 
 <section class="section video-section">
 <h2>See Our Work in Action</h2>
-
-<iframe 
-src="https://www.youtube.com/embed/dcUx-JrbZno?autoplay=1&mute=1&loop=1&playlist=dcUx-JrbZno"
-allow="autoplay"
-allowfullscreen>
-</iframe>
-
+<iframe src="https://www.youtube.com/embed/dcUx-JrbZno?autoplay=1&mute=1&loop=1&playlist=dcUx-JrbZno"></iframe>
 </section>
 
-<section class="section why">
+<!-- WHY -->
+<section class="section why" id="why">
 <h2>Why Choose Us</h2>
+
+<svg width="0" height="0">
+<defs>
+<linearGradient id="grad">
+<stop offset="0%" stop-color="#ff0000"/>
+<stop offset="100%" stop-color="#ff6600"/>
+</linearGradient>
+</defs>
+</svg>
 
 <div class="why-grid">
 
 <div class="why-box">
-<div class="counter">20+ Years</div>
-<p>Industry Experience</p>
+<div class="circle" data-value="20">
+<svg width="120" height="120">
+<circle cx="60" cy="60" r="45"></circle>
+<circle cx="60" cy="60" r="45" class="progress"></circle>
+</svg>
+<div class="number">0+</div>
+</div>
+<p>Years Experience</p>
 </div>
 
 <div class="why-box">
-<div class="counter">1000+</div>
+<div class="circle" data-value="1000">
+<svg width="120" height="120">
+<circle cx="60" cy="60" r="45"></circle>
+<circle cx="60" cy="60" r="45" class="progress"></circle>
+</svg>
+<div class="number">0+</div>
+</div>
 <p>Projects Completed</p>
 </div>
 
@@ -308,7 +305,6 @@ allowfullscreen>
 
 <section id="products" class="section">
 <h2>Our Products</h2>
-
 <div class="products">
 
 <div class="card">
@@ -334,7 +330,6 @@ allowfullscreen>
 
 <section id="clients" class="section">
 <h2>Our Clients</h2>
-
 <div class="clients-slider">
 <div class="slide-track">
 <img src="client1.png">
@@ -355,9 +350,8 @@ allowfullscreen>
 </section>
 
 <section class="map">
-<h2 style="text-align:center;">Our Location</h2>
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3753.1620406418833!2d72.72222339999999!3d19.833095499999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be71f1fa059cc4b%3A0xfa7343749557ebe0!2sRADHA%20INDUSTRIES!5e0!3m2!1sen!2sin!4v1777618940678!5m2!1sen!2sin">
-</iframe>
+<h2>Our Location</h2>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3753.1620406418833!2d72.72222339999999!3d19.833095499999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be71f1fa059cc4b%3A0xfa7343749557ebe0!2sRADHA%20INDUSTRIES!5e0!3m2!1sen!2sin"></iframe>
 </section>
 
 <a href="tel:8805102045" class="call-btn">
@@ -367,6 +361,46 @@ allowfullscreen>
 <a href="https://wa.me/918805102045" class="whatsapp-btn">
 <i class="fab fa-whatsapp"></i> WhatsApp
 </a>
+
+<script>
+let triggered=false;
+
+window.addEventListener('scroll',()=>{
+const section=document.getElementById('why');
+
+if(!triggered && section.getBoundingClientRect().top < window.innerHeight-100){
+triggered=true;
+
+document.querySelectorAll('.circle').forEach(circle=>{
+let value=parseInt(circle.dataset.value);
+let progress=circle.querySelector('.progress');
+let number=circle.querySelector('.number');
+
+let radius=45;
+let circumference=2*Math.PI*radius;
+
+let percent = value === 20 ? 20 : 100; 
+let offset=circumference-(percent/100)*circumference;
+
+progress.style.strokeDashoffset=offset;
+
+/* COUNT */
+let count=0;
+let step=value/50;
+
+let interval=setInterval(()=>{
+count+=step;
+if(count>=value){
+count=value;
+clearInterval(interval);
+}
+number.innerText = count.toLocaleString() + "+";
+},20);
+
+});
+}
+});
+</script>
 
 </body>
 </html>
