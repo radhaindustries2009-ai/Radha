@@ -50,7 +50,6 @@ nav {
     color: white;
     text-decoration: none;
     font-weight: 500;
-    font-size: 15px;
 }
 
 /* HERO */
@@ -58,23 +57,49 @@ nav {
     background: #0b0b0b;
     color: white;
     text-align: center;
-    padding: 150px 20px 110px;
+    padding: 120px 20px 60px;
 }
 
 .hero h1 {
     font-size: 38px;
-    margin-bottom: 12px;
 }
 
 .hero p {
     color: #bbb;
-    font-size: 16px;
+}
+
+/* VIDEO */
+.video-section iframe {
+    width: 85%;
+    max-width: 900px;
+    height: 480px;
+    border-radius: 12px;
 }
 
 /* SECTION */
 .section {
-    padding: 80px 20px;
+    padding: 60px 20px;
     text-align: center;
+}
+
+/* WHY US */
+.why {
+    background: #f8f8f8;
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.why-box {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
 }
 
 /* PRODUCTS */
@@ -91,20 +116,6 @@ nav {
     border-radius: 14px;
     background: #ffffff;
     box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-    transition: all 0.25s ease;
-}
-
-.card:hover {
-    transform: translateY(-6px);
-}
-
-.card h3 {
-    margin-bottom: 8px;
-}
-
-.card p {
-    color: #666;
-    font-size: 14px;
 }
 
 .card a {
@@ -115,7 +126,6 @@ nav {
     padding: 9px 16px;
     text-decoration: none;
     border-radius: 6px;
-    font-size: 14px;
 }
 
 /* CLIENTS */
@@ -161,7 +171,6 @@ nav {
     color: white;
     padding: 12px 18px;
     border-radius: 30px;
-    font-size: 15px;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -176,7 +185,6 @@ nav {
     color: white;
     padding: 12px 18px;
     border-radius: 30px;
-    font-size: 15px;
     text-decoration: none;
 }
 
@@ -204,7 +212,48 @@ nav {
 <!-- HERO -->
 <section id="home" class="hero">
 <h1>Industrial Solutions That Actually Work</h1>
-<p>Precision engineering, water treatment, and industrial products trusted across India.</p>
+<p>Trusted by leading companies across India for over 20+ years.</p>
+</section>
+
+<!-- VIDEO -->
+<section class="section video-section">
+<h2>See Our Work in Action</h2>
+
+<iframe 
+src="https://www.youtube.com/embed/dcUx-JrbZno?autoplay=1&mute=1&loop=1&playlist=dcUx-JrbZno"
+allow="autoplay"
+allowfullscreen>
+</iframe>
+
+</section>
+
+<!-- WHY US -->
+<section class="section why">
+<h2>Why Choose Us</h2>
+
+<div class="why-grid">
+
+<div class="why-box">
+<h3>20+ Years Experience</h3>
+<p>Deep industry knowledge and proven reliability.</p>
+</div>
+
+<div class="why-box">
+<h3>1000+ Projects</h3>
+<p>Successfully completed across multiple industries.</p>
+</div>
+
+<div class="why-box">
+<h3>Trusted Clients</h3>
+<p>Tata, L&T, Bajaj, Glenmark, Aarti Drugs & more.</p>
+</div>
+
+<div class="why-box">
+<h3>End-to-End Solutions</h3>
+<p>From chemicals to full treatment systems.</p>
+</div>
+
+</div>
 </section>
 
 <!-- PRODUCTS -->
@@ -221,7 +270,7 @@ nav {
 
 <div class="card">
 <h3>Water Solutions</h3>
-<p>Chemicals, testing kits, and complete water treatment systems.</p>
+<p>Chemicals, testing kits, and treatment systems.</p>
 <a href="water-solutions.pdf" target="_blank">View Details</a>
 </div>
 
