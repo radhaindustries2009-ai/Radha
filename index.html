@@ -10,8 +10,18 @@
 <style>
 
 /* RESET */
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;overflow-x:hidden;}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+overflow-x:hidden;
+background:#fff;
+color:#111;
+}
 
 /* HEADER */
 header{
@@ -20,6 +30,7 @@ position:fixed;
 width:100%;
 top:0;
 z-index:1000;
+backdrop-filter:blur(10px);
 }
 
 nav{
@@ -31,7 +42,9 @@ align-items:center;
 padding:15px 20px;
 }
 
-.logo img{height:40px;}
+.logo img{
+height:40px;
+}
 
 .nav-links{
 display:flex;
@@ -42,25 +55,42 @@ list-style:none;
 .nav-links a{
 color:white;
 text-decoration:none;
+font-weight:500;
+transition:0.3s;
+}
+
+.nav-links a:hover{
+opacity:0.7;
 }
 
 /* HERO */
 .hero{
-background:#0b0b0b;
+background:linear-gradient(to bottom,#0b0b0b,#111827);
 color:white;
 text-align:center;
-padding:140px 20px 60px;
+padding:140px 20px 70px;
 }
 
-.hero h1{font-size:36px;}
-.hero p{color:#bbb;margin-top:8px;}
+.hero h1{
+font-size:42px;
+margin-bottom:10px;
+}
+
+.hero p{
+color:#d1d5db;
+font-size:17px;
+}
 
 /* SECTION */
-.section{padding:70px 20px;text-align:center;}
+.section{
+padding:70px 20px;
+text-align:center;
+}
 
 /* VIDEO */
 .video-section h2{
-margin-bottom:50px; /* gap fix */
+margin-bottom:45px;
+font-size:34px;
 }
 
 .video-wrapper{
@@ -72,22 +102,27 @@ justify-content:center;
 width:100%;
 max-width:900px;
 height:500px;
-border-radius:12px;
-
-/* 🔥 subtle zoom animation */
+border-radius:16px;
+box-shadow:0 10px 40px rgba(0,0,0,0.2);
 transform:scale(0.95);
 opacity:0;
 transition:all 0.8s ease;
 }
 
-/* animate when visible */
 .video-section.show iframe{
 transform:scale(1);
 opacity:1;
 }
 
 /* WHY */
-.why{background:#f5f5f5;}
+.why{
+background:#f5f5f5;
+}
+
+.why h2{
+font-size:36px;
+margin-bottom:50px;
+}
 
 .why-grid{
 display:flex;
@@ -98,26 +133,33 @@ flex-wrap:wrap;
 
 .why-box{
 background:white;
-padding:30px;
-border-radius:12px;
-width:260px;
-box-shadow:0 5px 25px rgba(0,0,0,0.05);
+padding:35px;
+border-radius:20px;
+width:280px;
+box-shadow:0 10px 30px rgba(0,0,0,0.06);
+transition:0.3s;
+}
+
+.why-box:hover{
+transform:translateY(-8px);
 }
 
 /* CIRCLE */
 .circle{
-width:130px;
-height:130px;
+width:150px;
+height:150px;
 margin:auto;
 position:relative;
 }
 
-svg{transform:rotate(-90deg);}
+svg{
+transform:rotate(-90deg);
+}
 
 circle{
 fill:none;
 stroke-width:10;
-stroke:#eee;
+stroke:#ececec;
 }
 
 .progress{
@@ -126,6 +168,7 @@ stroke-dasharray:314;
 stroke-dashoffset:314;
 stroke-linecap:round;
 transition:stroke-dashoffset 2s ease;
+filter:drop-shadow(0 0 10px rgba(255,45,45,0.6));
 }
 
 .number{
@@ -133,8 +176,8 @@ position:absolute;
 top:50%;
 left:50%;
 transform:translate(-50%,-50%);
+font-size:30px;
 font-weight:bold;
-font-size:22px;
 }
 
 /* PRODUCTS */
@@ -147,44 +190,90 @@ flex-wrap:wrap;
 
 .card{
 background:white;
-padding:25px;
-border-radius:12px;
+padding:28px;
+border-radius:18px;
 width:260px;
-box-shadow:0 5px 20px rgba(0,0,0,0.05);
+box-shadow:0 8px 25px rgba(0,0,0,0.06);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card h3{
+margin-bottom:10px;
+font-size:24px;
+}
+
+.card p{
+color:#666;
+line-height:1.5;
+margin-bottom:18px;
 }
 
 .card a{
-margin-top:10px;
 display:inline-block;
 background:#8B0000;
 color:white;
-padding:8px 15px;
-border-radius:6px;
+padding:10px 18px;
+border-radius:8px;
 text-decoration:none;
+font-weight:500;
+transition:0.3s;
+}
+
+.card a:hover{
+background:#a30000;
 }
 
 /* CLIENTS */
-.clients-slider{overflow:hidden;}
+.clients-slider{
+overflow:hidden;
+margin-top:30px;
+}
 
 .slide-track{
 display:flex;
+width:calc(250px * 8);
 animation:scroll 20s linear infinite;
 }
 
 .slide-track img{
 width:120px;
 margin:20px;
+opacity:0.8;
+transition:0.3s;
+}
+
+.slide-track img:hover{
+opacity:1;
+transform:scale(1.05);
 }
 
 @keyframes scroll{
-0%{transform:translateX(0);}
-100%{transform:translateX(-50%);}
+0%{
+transform:translateX(0);
+}
+100%{
+transform:translateX(-50%);
+}
 }
 
 /* CONTACT */
 .contact{
 background:#f5f5f5;
-padding:60px;
+padding:70px 20px;
+}
+
+.contact h2{
+margin-bottom:20px;
+font-size:34px;
+}
+
+.contact p{
+margin-bottom:10px;
+font-size:17px;
 }
 
 /* MAP */
@@ -195,7 +284,8 @@ border:0;
 }
 
 /* BUTTONS */
-.call-btn,.whatsapp-btn{
+.call-btn,
+.whatsapp-btn{
 position:fixed;
 right:20px;
 padding:12px 18px;
@@ -205,15 +295,64 @@ display:flex;
 align-items:center;
 gap:8px;
 text-decoration:none;
+font-weight:500;
+z-index:999;
+box-shadow:0 8px 20px rgba(0,0,0,0.2);
 }
 
-.call-btn{bottom:80px;background:#007bff;}
-.whatsapp-btn{bottom:20px;background:#25D366;}
+.call-btn{
+bottom:80px;
+background:#007bff;
+}
+
+.whatsapp-btn{
+bottom:20px;
+background:#25D366;
+}
 
 /* MOBILE */
 @media(max-width:768px){
-.hero h1{font-size:26px;}
-.video-section iframe{height:250px;}
+
+.hero{
+padding:120px 20px 50px;
+}
+
+.hero h1{
+font-size:28px;
+}
+
+.hero p{
+font-size:15px;
+}
+
+.nav-links{
+gap:15px;
+font-size:14px;
+}
+
+.video-section iframe{
+height:260px;
+}
+
+.why-grid,
+.products{
+flex-direction:column;
+align-items:center;
+}
+
+.why-box,
+.card{
+width:100%;
+max-width:320px;
+}
+
+.call-btn,
+.whatsapp-btn{
+right:10px;
+padding:10px 14px;
+font-size:14px;
+}
+
 }
 
 </style>
@@ -221,9 +360,13 @@ text-decoration:none;
 
 <body>
 
+<!-- HEADER -->
 <header>
 <nav>
-<div class="logo"><img src="logo.png"></div>
+
+<div class="logo">
+<img src="logo.png">
+</div>
 
 <ul class="nav-links">
 <li><a href="#home">Home</a></li>
@@ -231,106 +374,169 @@ text-decoration:none;
 <li><a href="#clients">Clients</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
+
 </nav>
 </header>
 
+<!-- HERO -->
 <section id="home" class="hero">
 <h1>Industrial Solutions That Actually Work</h1>
 <p>Trusted across India for 20+ years</p>
 </section>
 
+<!-- VIDEO -->
 <section class="section video-section" id="video">
+
 <h2>See Our Work in Action</h2>
 
 <div class="video-wrapper">
-<iframe src="https://www.youtube.com/embed/dcUx-JrbZno?autoplay=1&mute=1&loop=1&playlist=dcUx-JrbZno"></iframe>
+
+<iframe
+src="https://www.youtube.com/embed/dcUx-JrbZno?autoplay=1&mute=1&loop=1&playlist=dcUx-JrbZno"
+allowfullscreen>
+</iframe>
+
 </div>
 
 </section>
 
 <!-- WHY -->
 <section class="section why" id="why">
+
 <h2>Why Choose Us</h2>
 
 <div class="why-grid">
 
 <div class="why-box">
+
 <div class="circle">
-<svg width="130" height="130">
-<circle cx="65" cy="65" r="50"></circle>
-<circle cx="65" cy="65" r="50" class="progress"></circle>
+<svg width="150" height="150">
+<circle cx="75" cy="75" r="50"></circle>
+<circle cx="75" cy="75" r="50" class="progress"></circle>
 </svg>
+
 <div class="number">20+</div>
 </div>
-<p>Years Experience</p>
+
+<h3>Years Experience</h3>
+
 </div>
 
 <div class="why-box">
+
 <div class="circle">
-<svg width="130" height="130">
-<circle cx="65" cy="65" r="50"></circle>
-<circle cx="65" cy="65" r="50" class="progress"></circle>
+<svg width="150" height="150">
+<circle cx="75" cy="75" r="50"></circle>
+<circle cx="75" cy="75" r="50" class="progress"></circle>
 </svg>
+
 <div class="number">1000+</div>
 </div>
-<p>Projects Completed</p>
+
+<h3>Projects Completed</h3>
+
 </div>
 
 </div>
+
 </section>
 
 <!-- PRODUCTS -->
 <section id="products" class="section">
+
 <h2>Our Products</h2>
 
 <div class="products">
-<div class="card"><h3>Gland Packing</h3><a href="gland-packing.pdf">View</a></div>
-<div class="card"><h3>Water Solutions</h3><a href="water-solutions.pdf">View</a></div>
-<div class="card"><h3>Mechanical Seals</h3><a href="seals.pdf">View</a></div>
+
+<div class="card">
+<h3>Gland Packing</h3>
+<p>High-performance sealing solutions for industrial applications.</p>
+<a href="gland-packing.pdf" target="_blank">View Details</a>
 </div>
+
+<div class="card">
+<h3>Water Solutions</h3>
+<p>Chemicals, testing kits, and complete treatment systems.</p>
+<a href="water-solutions.pdf" target="_blank">View Details</a>
+</div>
+
+<div class="card">
+<h3>Mechanical Seals</h3>
+<p>Reliable sealing systems for heavy-duty machinery.</p>
+<a href="seals.pdf" target="_blank">View Details</a>
+</div>
+
+<div class="card">
+<h3>SS Filter Housing</h3>
+<p>Durable stainless steel filtration housing for industrial water systems.</p>
+<a href="ss-filter-housing.pdf" target="_blank">View Details</a>
+</div>
+
+</div>
+
 </section>
 
 <!-- CLIENTS -->
 <section id="clients" class="section">
+
 <h2>Our Clients</h2>
+
 <div class="clients-slider">
+
 <div class="slide-track">
-<img src="client1.png"><img src="client2.png"><img src="client3.png">
-<img src="client1.png"><img src="client2.png"><img src="client3.png">
+
+<img src="client1.png">
+<img src="client2.png">
+<img src="client3.png">
+
+<img src="client1.png">
+<img src="client2.png">
+<img src="client3.png">
+
 </div>
+
 </div>
+
 </section>
 
 <!-- CONTACT -->
 <section id="contact" class="contact">
+
 <h2>Contact Us</h2>
+
 <p>Sunil Pagare</p>
 <p>8805102045 / 8810202045</p>
 <p>info@radha-industries.com</p>
+
 </section>
 
 <!-- MAP -->
 <section class="map">
-<h2 style="text-align:center;">Our Location</h2>
 
-<iframe 
+<h2 style="text-align:center;margin-bottom:20px;">
+Our Location
+</h2>
+
+<iframe
 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3753.1620406418833!2d72.72222339999999!3d19.833095499999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be71f1fa059cc4b%3A0xfa7343749557ebe0!2sRADHA%20INDUSTRIES!5e0!3m2!1sen!2sin!4v1777966067042!5m2!1sen!2sin"
-allowfullscreen="" 
-loading="lazy" 
+allowfullscreen=""
+loading="lazy"
 referrerpolicy="no-referrer-when-downgrade">
 </iframe>
 
 </section>
 
-<!-- BUTTONS -->
+<!-- CALL -->
 <a href="tel:8805102045" class="call-btn">
 <i class="fas fa-phone"></i> Call
 </a>
 
-<a href="https://wa.me/918805102045" class="whatsapp-btn">
+<!-- WHATSAPP -->
+<a href="https://wa.me/918805102045" class="whatsapp-btn" target="_blank">
 <i class="fab fa-whatsapp"></i> WhatsApp
 </a>
 
+<!-- SCRIPT -->
 <script>
 
 /* circle animation */
@@ -341,14 +547,16 @@ window.addEventListener('scroll', () => {
 let section = document.getElementById('why');
 
 if(!triggered && section.getBoundingClientRect().top < window.innerHeight - 100){
+
 triggered = true;
 
 document.querySelectorAll('.progress').forEach(el => {
 el.style.strokeDashoffset = 80;
 });
+
 }
 
-/* 🔥 video animation trigger */
+/* video animation */
 let video = document.getElementById('video');
 
 if(video.getBoundingClientRect().top < window.innerHeight - 100){
