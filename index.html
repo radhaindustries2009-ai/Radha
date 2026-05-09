@@ -228,27 +228,63 @@ background:#a30000;
 }
 
 /* CLIENTS */
-.clients-slider{
+.clients-section{
+background:#ffffff;
 overflow:hidden;
-margin-top:30px;
 }
 
-.slide-track{
-display:flex;
-width:calc(250px * 8);
-animation:scroll 20s linear infinite;
+.clients-section h2{
+font-size:36px;
+margin-bottom:50px;
 }
 
-.slide-track img{
+.logo-slider{
+overflow:hidden;
+position:relative;
+width:100%;
+}
+
+.logo-slider::before,
+.logo-slider::after{
+content:"";
+position:absolute;
+top:0;
 width:120px;
-margin:20px;
-opacity:0.8;
-transition:0.3s;
+height:100%;
+z-index:2;
 }
 
-.slide-track img:hover{
+.logo-slider::before{
+left:0;
+background:linear-gradient(to right,#fff,transparent);
+}
+
+.logo-slider::after{
+right:0;
+background:linear-gradient(to left,#fff,transparent);
+}
+
+.logo-track{
+display:flex;
+align-items:center;
+gap:70px;
+width:max-content;
+animation:scroll 35s linear infinite;
+}
+
+.logo-track img{
+height:70px;
+width:auto;
+object-fit:contain;
+opacity:0.75;
+transition:all 0.3s ease;
+filter:grayscale(100%);
+}
+
+.logo-track img:hover{
 opacity:1;
-transform:scale(1.05);
+transform:scale(1.08);
+filter:grayscale(0%);
 }
 
 @keyframes scroll{
@@ -344,6 +380,15 @@ align-items:center;
 .card{
 width:100%;
 max-width:320px;
+}
+
+.logo-track{
+gap:40px;
+animation-duration:25s;
+}
+
+.logo-track img{
+height:45px;
 }
 
 .call-btn,
@@ -462,21 +507,53 @@ allowfullscreen>
 </section>
 
 <!-- CLIENTS -->
-<section id="clients" class="section">
+<section id="clients" class="section clients-section">
 
-<h2>Our Clients</h2>
+<h2>Trusted By Industry Leaders</h2>
 
-<div class="clients-slider">
+<div class="logo-slider">
 
-<div class="slide-track">
-
-<img src="client1.png">
-<img src="client2.png">
-<img src="client3.png">
+<div class="logo-track">
 
 <img src="client1.png">
 <img src="client2.png">
 <img src="client3.png">
+<img src="client6.png">
+<img src="client7.png">
+<img src="client8.jpg">
+<img src="client9.png">
+<img src="client10.png">
+<img src="client11.png">
+<img src="client12.png">
+<img src="client13.png">
+<img src="client14.png">
+<img src="client15.png">
+<img src="client16.png">
+<img src="client17.png">
+<img src="client18.jpg">
+<img src="client21.png">
+<img src="client22.png">
+<img src="client23.gif">
+
+<img src="client1.png">
+<img src="client2.png">
+<img src="client3.png">
+<img src="client6.png">
+<img src="client7.png">
+<img src="client8.jpg">
+<img src="client9.png">
+<img src="client10.png">
+<img src="client11.png">
+<img src="client12.png">
+<img src="client13.png">
+<img src="client14.png">
+<img src="client15.png">
+<img src="client16.png">
+<img src="client17.png">
+<img src="client18.jpg">
+<img src="client21.png">
+<img src="client22.png">
+<img src="client23.gif">
 
 </div>
 
